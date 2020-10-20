@@ -1,12 +1,12 @@
-pipeline:
+kind: pipeline
+name: default
 
 steps:
-
-- name: build
-  image: node:latest
+- name: frontend
+  image: node
   commands:
-    - "npm install"
-
+  - npm ci
+  - npm run test:unit
 - name: publish  
   image: plugins/docker
   settings:
