@@ -2,11 +2,7 @@ kind: pipeline
 name: default
 
 steps:
-- name: frontend
-  image: node
-  commands:
-  - npm ci
-  - npm run test:unit
+
 - name: publish  
   image: plugins/docker
   settings:
